@@ -25,6 +25,7 @@ x -= 1
 dp = [inf] * n
 sumTime = sum(lst[0])
 dp[0] = x * lst[0][1] + sumTime
+_min = lst[0][1]
 
 for i in range(1,n):
     sumTime += sum(lst[i])
