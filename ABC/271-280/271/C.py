@@ -24,8 +24,6 @@ def lcm(a,b): return a*b // gcd(a,b)
 
 
 n = int(inputSys())
-# ls = sorted([random.randint(1,10) for _ in range(n)])
-# lst = sorted(list(set(ls)))
 lst = sorted(list(set(map(int, inputSys().split()))))
 ans = 0
 now = 1
@@ -40,12 +38,10 @@ while i < m:
     else:
         if (m - i) + tmp >= 2:
             ans += 1
-            m -= 0 if tmp >= 2 else 1 if tmp == 1 else 2
+            m -= min(2, max(0, 2-tmp))
             tmp = max(0, tmp-2)
         else:
             break
     now += 1
 ans += tmp // 2
 print(ans)
-# print(*ls)
-# print(*lst)
