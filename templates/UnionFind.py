@@ -1,5 +1,8 @@
+from collections import defaultdict
+
 class UnionFind():
     def __init__(self, n: int):
+        self.n = n
         self.parents = [-1] * n
         self.rank = [0] * n
         self.siz = [1] * n
@@ -28,3 +31,9 @@ class UnionFind():
 
     def size(self, x: int):
         return self.siz[self.find(x)]
+
+    def all_group_members(self):
+        group_members: defaultdict[int, list[int]] = defaultdict(list)
+        for member in range(self.n):
+            group_members[self.find(member)].append(member)
+        return group_members
