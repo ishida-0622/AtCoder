@@ -23,9 +23,9 @@ def lcm(a,b): return a*b // gcd(a,b)
 
 h, w = map(int, input().split())
 lst = [input() for _ in range(h)]
-is_sean = [[False] * w for _ in range(h)]
+is_seen = [[False] * w for _ in range(h)]
 
-is_sean[0][0] = True
+is_seen[0][0] = True
 que = deque([(0, 0, 0)])
 d = [(0, 1), (1, 0), (-1, 0), (0, -1)]
 
@@ -37,8 +37,8 @@ while que:
     for a, b in d:
         nx = x + a
         ny = y + b
-        if 0 <= nx < h and 0 <= ny < w and not is_sean[nx][ny] and lst[nx][ny] == ".":
-            is_sean[nx][ny] = True
+        if 0 <= nx < h and 0 <= ny < w and not is_seen[nx][ny] and lst[nx][ny] == ".":
+            is_seen[nx][ny] = True
             que.append((nx, ny, dist+1))
 
 print(-1)
