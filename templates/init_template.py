@@ -1,6 +1,6 @@
 import sys
 input = lambda: sys.stdin.readline().rstrip()
-sys.setrecursionlimit(10**7)
+sys.setrecursionlimit(7*10**5)
 import string
 import math
 from math import gcd, sqrt, floor, ceil, sin, cos, tan, pi
@@ -23,7 +23,6 @@ def YesNo(flag: bool, yes="Yes", no="No"): print(yes) if flag else print(no)
 def yes(yes="Yes"): print(yes);exit()
 def no(no="No"): print(no);exit()
 def lcm(a,b): return a*b // gcd(a,b)
-# Decimal(str(n)).quantize(Decimal("0.1"), ROUND_HALF_UP) <- 四捨五入
 
 
 
