@@ -6,7 +6,7 @@ import math
 from math import gcd, sqrt, floor, ceil, sin, cos, tan, pi
 from copy import deepcopy
 from collections import deque, defaultdict, Counter
-from itertools import combinations, permutations, accumulate
+from itertools import combinations, permutations, accumulate, groupby
 from bisect import bisect_left, bisect_right, insort_left, insort_right
 from heapq import heapify, heappop, heappush
 from functools import lru_cache, reduce
@@ -22,7 +22,13 @@ zero_nine = string.digits
 def YesNo(flag: bool, yes="Yes", no="No"): print(yes) if flag else print(no)
 def yes(yes="Yes"): print(yes);exit()
 def no(no="No"): print(no);exit()
-def lcm(a,b): return a*b // gcd(a,b)
+def lcm(a: int, b: int): return a*b // gcd(a,b)
+def round(n: int, d: int = 0): return float(Decimal(n).quantize(Decimal(f"1e{d}"), ROUND_HALF_UP))
 
 
 
+def main():
+    return
+
+if __name__ == "__main__":
+    main()
