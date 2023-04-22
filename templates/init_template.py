@@ -3,7 +3,7 @@ input = lambda: sys.stdin.readline().rstrip()
 sys.setrecursionlimit(7*10**5)
 import string
 import math
-from math import gcd, sqrt, floor, ceil, sin, cos, tan, pi
+from math import gcd, sqrt, floor, ceil, radians, sin, cos, tan, pi
 from copy import deepcopy
 from collections import deque, defaultdict, Counter
 from itertools import combinations, permutations, accumulate, groupby
