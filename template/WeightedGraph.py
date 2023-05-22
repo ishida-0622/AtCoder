@@ -1,5 +1,7 @@
 from heapq import heappush, heappop
+
 inf = float("inf")
+
 
 class WeightedGraph:
     def __init__(self, n: int):

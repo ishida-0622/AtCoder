@@ -2,8 +2,11 @@ from typing import TypeVar, Sequence, Callable
 
 T = TypeVar("T")
 
+
 class SegTree:
-    def __init__(self, n: int, func: Callable[[int, int], T], e: T, init_val: Sequence[T]=None):
+    def __init__(
+        self, n: int, func: Callable[[int, int], T], e: T, init_val: Sequence[T] = None
+    ):
         """セグ木. 前提条件 -> func(func(x, y), z) = func(x, func(y, z))
 
         Args:

@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class UnionFind:
     """Union-Find Tree"""
 

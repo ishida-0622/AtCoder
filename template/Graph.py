@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class Graph:
     def __init__(self, n: int):
         self.n = n
@@ -24,7 +25,7 @@ class Graph:
                 if self.is_seen[next]:
                     continue
                 self.is_seen[next] = True
-                que.append((next, dist+1))
+                que.append((next, dist + 1))
         return -1
 
     def bfs_with_root(self, start: int, goal: int):
@@ -47,5 +48,5 @@ class Graph:
                     continue
                 self.is_seen[next] = True
                 self.prev[next] = now
-                que.append((next, dist+1))
+                que.append((next, dist + 1))
         return -1, []

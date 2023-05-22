@@ -1,5 +1,6 @@
 inf = float("inf")
 
+
 class WarshallFloyd:
     def __init__(self, n: int):
         self.n = n
