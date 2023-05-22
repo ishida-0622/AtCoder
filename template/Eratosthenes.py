@@ -1,4 +1,4 @@
-def Eratosthenes(N: int):
+def eratosthenes(N: int):
     """エラトステネスの篩. Ο(N log log N)"""
     is_prime = [True if i % 2 else False for i in range(N + 1)]
     is_prime[1], is_prime[2] = False, True
