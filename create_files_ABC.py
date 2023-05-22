@@ -1,6 +1,7 @@
 import os
 from collections import defaultdict
 
+
 def main():
     n = int(input("回数を入力 : "))
 
@@ -9,7 +10,7 @@ def main():
     # 400回目まで作成可能
     for i in range(40):
         for j in range(10):
-            dic[f"{i*10+1}-{(i+1)*10}"].add(i*10+1+j)
+            dic[f"{i*10+1}-{(i+1)*10}"].add(i * 10 + 1 + j)
 
     a = ""
     for k, v in dic.items():
@@ -26,7 +27,7 @@ def main():
 
     # テンプレートの読み込み
     try:
-        f = open(".\\templates\\init_template.py", "r")
+        f = open(".\\template\\init_template.py", "r")
         init_template = f.read()
         f.close()
     except:
@@ -49,6 +50,7 @@ def main():
     except:
         print("ファイル作成に失敗しました")
         return
+
 
 if __name__ == "__main__":
     main()
