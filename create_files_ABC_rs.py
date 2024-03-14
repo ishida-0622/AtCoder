@@ -52,6 +52,7 @@ def main():
             ["cargo", "add", "proconio@0.3.6"],
             cwd=subprocess_dir_path,
         )
+        os.remove(f"{subprocess_dir_path}\\src\\main.rs")
         for val in files:
             f = open(f"{dir_path}\\{val}", "x")
             f.write(init_template)
