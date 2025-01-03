@@ -4,6 +4,9 @@ from collections import defaultdict
 
 
 def main():
+    isWindows = os.name == "nt"
+    dir_separator = "\\" if isWindows else "/"
+
     n = int(input("回数を入力 : "))
 
     dic: defaultdict[int, set[int]] = defaultdict(set)
@@ -22,14 +25,16 @@ def main():
         print("その回数は作成できません")
         return
 
-    dir_path = f"ABC\\{a}\\{n}\\src\\bin"
-    subprocess_dir_path = f"ABC\\{a}\\{n}"
+    dir_path = (
+        f"ABC{dir_separator}{a}{dir_separator}{n}{dir_separator}src{dir_separator}bin"
+    )
+    subprocess_dir_path = f"ABC{dir_separator}{a}{dir_separator}{n}"
     # D問題まで作成
     files = [f"{v}.rs" for v in "abcd"]
 
     # テンプレートの読み込み
     try:
-        f = open(".\\template\\init_template.rs", "r")
+        f = open(f".{dir_separator}template{dir_separator}init_template.rs", "r")
         init_template = f.read()
         f.close()
     except:
@@ -52,9 +57,9 @@ def main():
             ["cargo", "add", "proconio@0.3.6"],
             cwd=subprocess_dir_path,
         )
-        os.remove(f"{subprocess_dir_path}\\src\\main.rs")
+        os.remove(f"{subprocess_dir_path}{dir_separator}src{dir_separator}main.rs")
         for val in files:
-            f = open(f"{dir_path}\\{val}", "x")
+            f = open(f"{dir_path}{dir_separator}{val}", "x")
             f.write(init_template)
             f.close()
     except:
